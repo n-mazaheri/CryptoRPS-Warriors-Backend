@@ -1,6 +1,9 @@
 const { MongoClient, ObjectId } = require('mongodb');
+require('dotenv').config();
 
-const uri = 'mongodb+srv://namazaheri:166846877@cluster0.frg1sj3.mongodb.net/srp';
+const uri = process.env.DATABASE_URL;
+
+console.log(uri);
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
