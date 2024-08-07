@@ -4,7 +4,7 @@ Welcome to CryptoRPS Warriors, a blockchain-based twist on the classic Rock-Pape
 
 You can find front-end part of code in this repository [here](https://github.com/n-mazaheri/CryptoRPS-Warriors)
 
-# project description
+# Project Description
 
 CryptoRPS Warriors is a blockchain-based twist on the classic Rock-Paper-Scissors game, featuring an exciting 5-move variant. This repository have its back-end code that is responsible for managment of users and wallets authentication and authorization. It also keeps track of games that users already deployed on blockchain and update them based on user moves. After creation of each new game or a new movement in exisiting games, it will send socket events to users.
 
@@ -15,3 +15,13 @@ CryptoRPS Warriors is a blockchain-based twist on the classic Rock-Paper-Scissor
 - User authenticaton: Passport
 - Event management: Socket.io, socket.io-client
 - Databse: MongoDB
+
+## How To Use
+
+To set up the project, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/n-mazaheri/CryptoRPS-Warriors-Backend`
+2. Navigate to the project directory: `cd CryptoRPS-Warriors-Backend`
+3. Install dependencies: `npm install`
+4. add a .env file to the project with DATABASE_URL="...."
+5. Start the project: `npm start`
