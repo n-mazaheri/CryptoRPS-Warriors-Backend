@@ -7,7 +7,7 @@ let users = {};
 const initGameSocket = (server) => {
   io = socketIo(server, {
     cors: {
-      origin: 'http://localhost:3001', // Replace with your React app's URL
+      origin: 'https://cryptorps-warriors.netlify.app', // Replace with your React app's URL
       methods: ['GET', 'POST'],
       credentials: true,
     },

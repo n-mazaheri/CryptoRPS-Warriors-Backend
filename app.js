@@ -20,7 +20,7 @@ var app = express();
 const server = http.createServer(app);
 initGameSocket(server);
 server.listen(3002, () => {
-  console.log('Server is running on port 3000');
+  console.log('Server is running on port 3002');
 });
 app.use(flash());
 // Middleware
@@ -48,6 +48,17 @@ app.use(UsersMiddleware.activeUsersMiddleware);
 
 // Use the CORS middleware
 app.use(cors({ origin: 'https://cryptorps-warriors.netlify.app', credentials: true }));
+
+const corsOptions = {
+  origin: 'https://cryptorps-warriors.netlify.app',
+  credentials: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+  allowedHeaders: 'Content-Type,Authorization',
+};
+
+app.use(cors(corsOptions));
+// Handle preflight requests
+app.options('*', cors(corsOptions));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
