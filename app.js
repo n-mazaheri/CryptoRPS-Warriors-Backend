@@ -24,13 +24,14 @@ server.listen(3002, () => {
 });
 app.use(flash());
 // Middleware
+const uri = process.env.DATABASE_URL;
 app.use(
   session({
     secret: 'your_secret_key',
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: 'mongodb+srv://namazaheri:166846877@cluster0.frg1sj3.mongodb.net/srp',
+      mongoUrl: uri,
       collectionName: 'sessions',
       ttl: 14 * 24 * 60 * 60,
       autoRemove: 'native',
@@ -46,7 +47,7 @@ app.use(passport.session());
 app.use(UsersMiddleware.activeUsersMiddleware);
 
 // Use the CORS middleware
-app.use(cors({ origin: 'http://localhost:3001', credentials: true }));
+app.use(cors({ origin: 'https://cryptorps-warriors.netlify.app', credentials: true }));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
