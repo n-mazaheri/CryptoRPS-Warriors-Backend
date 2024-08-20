@@ -47,7 +47,6 @@ app.use(passport.session());
 app.use(UsersMiddleware.activeUsersMiddleware);
 
 // Use the CORS middleware
-app.use(cors({ origin: 'https://cryptorps-warriors.netlify.app', credentials: true }));
 
 const corsOptions = {
   origin: 'https://cryptorps-warriors.netlify.app',
