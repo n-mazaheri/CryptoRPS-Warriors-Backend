@@ -49,7 +49,7 @@ app.use(UsersMiddleware.activeUsersMiddleware);
 // Use the CORS middleware
 
 const corsOptions = {
-  origin: 'https://cryptorps-warriors.netlify.app',
+  origin: 'https://cryptorps-warriors.netlify.app/',
   credentials: true,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   allowedHeaders: 'Content-Type,Authorization',
